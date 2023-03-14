@@ -1,6 +1,5 @@
 package clases;
 
-
 public class clsString {
 	char[] aTexto;
 	
@@ -18,6 +17,7 @@ public class clsString {
 	
 	public String toLowerCase() {
 		String rpta = "";
+
 		for ( char car : aTexto ) {
 			if (car >= 'A' && car <= 'Z' ) car += 32;
 			else switch (car) {
@@ -30,11 +30,13 @@ public class clsString {
 			}
 			rpta += car;
 		}
+		
 		return rpta;
 	}
 	
 	public String toUpperCase() {
 		String rpta = "";
+		
 		for ( char car : aTexto ) {
 			if (car >= 'a' && car <= 'z' ) car -= 32;
 			else switch (car) {
