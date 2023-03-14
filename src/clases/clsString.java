@@ -1,5 +1,6 @@
 package clases;
 
+
 public class clsString {
 	char[] aTexto;
 	
