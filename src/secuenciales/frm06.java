@@ -1,27 +1,21 @@
 package secuenciales;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
-import java.awt.event.ActionEvent;
 
 public class frm06 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	JPanel contentPane;
-	JLabel lblRadio, lblAltura, lblVolumen, lblAreaTotal;
 	JTextField txtRadio, txtAltura, txtVolumen, txtAreaTotal;
-	JButton btnCalcular;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -38,66 +32,62 @@ public class frm06 extends JFrame {
 
 	public frm06() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 250, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-		getContentPane().setLayout(null);
+		setBounds(0, 0, 200, 250);
+		setLayout(null);
 		setLocationRelativeTo(null);
 		
-		lblRadio = new JLabel("Radio :");
-		lblRadio.setBounds(30, 30, 60, 30);
-		contentPane.add(lblRadio);
+		JLabel lblRadio = new JLabel("Radio :");
+		lblRadio.setBounds(30, 30, 60, 25);
+		getContentPane().add(lblRadio);
 		
-		lblAltura = new JLabel("Altura :");
-		lblAltura.setBounds(30, 70, 60, 30);
-		contentPane.add(lblAltura);
+		JLabel lblAltura = new JLabel("Altura :");
+		lblAltura.setBounds(30, 60, 60, 25);
+		getContentPane().add(lblAltura);
 		
-		lblVolumen = new JLabel("Volúmen :");
-		lblVolumen.setBounds(30, 110, 60, 30);
-		contentPane.add(lblVolumen);
+		JLabel lblVolumen = new JLabel("Volúmen :");
+		lblVolumen.setBounds(30, 90, 60, 25);
+		getContentPane().add(lblVolumen);
 		
-		lblAreaTotal = new JLabel("Área Total :");
-		lblAreaTotal.setBounds(30, 150, 60, 30);
-		contentPane.add(lblAreaTotal);
+		JLabel lblAreaTotal = new JLabel("Área Total :");
+		lblAreaTotal.setBounds(30, 120, 70, 25);
+		getContentPane().add(lblAreaTotal);
 		
 		txtRadio = new JTextField();
-		txtRadio.setBounds(100, 30, 60, 30);
+		txtRadio.setBounds(100, 30, 60, 25);
 		txtRadio.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtRadio.setMargin(new Insets(5,5,5,5));
-		contentPane.add(txtRadio);
+		txtRadio.setMargin(new Insets(2, 5, 2, 5));
+		getContentPane().add(txtRadio);
 		
 		txtAltura = new JTextField();
-		txtAltura.setBounds(100, 70, 60, 30);
+		txtAltura.setBounds(100, 60, 60, 25);
 		txtAltura.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtAltura.setMargin(new Insets(5,5,5,5));
-		contentPane.add(txtAltura);
+		txtAltura.setMargin(new Insets(2, 5, 2, 5));
+		getContentPane().add(txtAltura);
 		
 		txtVolumen = new JTextField();
-		txtVolumen.setBounds(100, 110, 60, 30);
+		txtVolumen.setBounds(100, 90, 60, 25);
 		txtVolumen.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtVolumen.setMargin(new Insets(5,5,5,5));
+		txtVolumen.setMargin(new Insets(2, 5, 2, 5));
 		txtVolumen.setFocusable(false);
-		contentPane.add(txtVolumen);
+		getContentPane().add(txtVolumen);
 		
 		txtAreaTotal = new JTextField();
-		txtAreaTotal.setBounds(100, 150, 60, 30);
+		txtAreaTotal.setBounds(100, 120, 60, 25);
 		txtAreaTotal.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtAreaTotal.setMargin(new Insets(5,5,5,5));
+		txtAreaTotal.setMargin(new Insets(2, 5, 2, 5));
 		txtAreaTotal.setFocusable(false);
-		contentPane.add(txtAreaTotal);
+		getContentPane().add(txtAreaTotal);
 		
-		btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(60,200,100,30);
+		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.setBounds(50,160,100,30);
 		btnCalcular.setMnemonic('a');
-		contentPane.add(btnCalcular);
+		getContentPane().add(btnCalcular);
 		
 		btnCalcular.addActionListener(new ActionListener() { 
-			public void actionPerformed(ActionEvent e) { btnCalcular_Click(); } });
+			public void actionPerformed(ActionEvent e) { btnCalcular_actionPerformed(); } });
 	}
 		
-	private void btnCalcular_Click() {
+	private void btnCalcular_actionPerformed() {
 		int radio = Integer.parseInt( txtRadio.getText() );
 		int altura = Integer.parseInt( txtAltura.getText() );
 		
@@ -107,7 +97,6 @@ public class frm06 extends JFrame {
 		DecimalFormat df = new DecimalFormat("##.00");
 		txtVolumen.setText( df.format(volumen) );
 		txtAreaTotal.setText( df.format(areaTotal) );
-		
 	}
 	
 }
