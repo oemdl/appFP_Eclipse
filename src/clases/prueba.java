@@ -12,6 +12,7 @@ public class prueba {
 					System.out.println( cString.toLowerCase() );
 				} catch (Exception e) {
 					e.printStackTrace();
+					int i=7;
 				}
 			}
 		});
