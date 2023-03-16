@@ -19,6 +19,7 @@ public class frm01 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
+	
 	JTextField txtUnidades, txtPrecio, txtCompra, txtDescuento, txtTotal;
 	JButton btnCalcular;
 
