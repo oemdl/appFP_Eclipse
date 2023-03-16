@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class frm11 extends JFrame {
+public class frm03 extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	JTextField txtNumero, txtRpta;
@@ -20,7 +20,7 @@ public class frm11 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm11 frame = new frm11();
+					frm03 frame = new frm03();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class frm11 extends JFrame {
 		});
 	}
 
-	public frm11() {
+	public frm03() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 200, 200);
 		setLayout(null);
@@ -68,19 +68,15 @@ public class frm11 extends JFrame {
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
 		
-		/*
-		if ( numero > 0 ) txtRpta.setText("Positivo");
-		else if ( numero == 0 ) txtRpta.setText("Cero");
-		else txtRpta.setText("Negativo");
-		*/
-		
-		/*
-		txtRpta.setText("Positivo");
-		if ( numero == 0 ) txtRpta.setText("Cero");
-		else if ( numero < 0 ) txtRpta.setText("Negativo");
-		*/
-		
-		txtRpta.setText( numero > 0 ? "Positivo" : numero < 0 ? "Negativo" : "Cero"  );
+		String sAngulo = "Error";
+		if ( numero == 0 ) sAngulo = "Nulo";
+		else if ( numero > 0 && numero < 90) sAngulo = "Agudo";
+		else if ( numero == 90) sAngulo = "Recto";
+		else if ( numero > 90 && numero < 180) sAngulo = "Obtuso";
+		else if ( numero == 180) sAngulo = "Llano";
+		else if ( numero > 180 && numero < 360) sAngulo = "Cóncavo";
+		else if ( numero == 360) sAngulo = "Completo";
+		txtRpta.setText(sAngulo);
 	}
 	
 }
