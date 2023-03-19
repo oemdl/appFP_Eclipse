@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class frm05 extends JFrame {
-	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -25,6 +24,8 @@ public class frm05 extends JFrame {
 	public frm05() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 300);
+		setLayout(null);
+		setLocationRelativeTo(null);
 		
 	}
 
