@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 
 public class frm11 extends JFrame {
 	private static final long serialVersionUID = 1L;
-
+	
 	JTextField txtNumero, txtRpta;
 
 	public static void main(String[] args) {

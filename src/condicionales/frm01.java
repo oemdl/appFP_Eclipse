@@ -33,7 +33,7 @@ public class frm01 extends JFrame {
 	public frm01() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 300);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		
 		JLabel lblUnidades = new JLabel("Unidades : ");

@@ -102,7 +102,7 @@ public class frm06 extends JFrame {
 		
 		for( int i=inicio; i <= fin; i++ ) 
 			txaRpta.append( "" + numero + " x " + i + " = " + ( numero * i) + "\n" );
-		
+
 	}
 
 }

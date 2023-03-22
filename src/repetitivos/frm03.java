@@ -8,22 +8,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm05 extends JFrame {
+public class frm03 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	JTextField txtNumero;
-	JTextArea txaRpta;
+	JTextField txtNumero, txtDivisores;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm05 frame = new frm05();
+					frm03 frame = new frm03();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,9 +29,9 @@ public class frm05 extends JFrame {
 		});
 	}
 
-	public frm05() {
+	public frm03() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 250, 400);
+		setBounds(0, 0, 250, 180);
 		setLocationRelativeTo( null );
 		setLayout(null);
 		
@@ -42,21 +39,24 @@ public class frm05 extends JFrame {
 		lblNumero.setBounds(30, 30, 60, 25);
 		getContentPane().add(lblNumero);
 		
+		JLabel lblDivisores = new JLabel("Divisores :");
+		lblDivisores.setBounds(30, 60, 70, 25);
+		getContentPane().add(lblDivisores);
+		
 		txtNumero = new JTextField();
 		txtNumero.setBounds(100, 30, 50, 25);
 		txtNumero.setMargin( new Insets( 2, 5, 2, 5 ));
 		txtNumero.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtNumero);
-
-		txaRpta = new JTextArea();
-		txaRpta.setMargin( new Insets(5,10,5,5));
 		
-		JScrollPane scPane = new JScrollPane(txaRpta);
-		scPane.setBounds(30, 60, 150, 240);
-		getContentPane().add(scPane);
+		txtDivisores = new JTextField();
+		txtDivisores.setBounds(100, 60, 100, 25);
+		txtDivisores.setFocusable(false);
+		txtDivisores.setMargin( new Insets( 2, 5, 2, 5 ));
+		getContentPane().add(txtDivisores);
 		
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(60, 320, 100, 30);
+		btnCalcular.setBounds(60, 100, 100, 30);
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 
@@ -67,16 +67,17 @@ public class frm05 extends JFrame {
 
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
-		txaRpta.setText("");
+		//int tope = numero % 2 == 0 ? numero / 2 : numero / 3; 
+		//int tope = numero / ( numero % 2 == 0 ? 2 : 3);
+					
+		int tope = numero / ( numero % 2 + 2 );
+		String sDivisores = "1";
 		
-		/*
-		for( int i = 1; i <= 12; i++ ) 
-			txaRpta.append( "" + numero + " x " + ( i < 10 ? "  " : "" ) + i + " = " + ( numero * i < 10 ? "  " : "" )  + ( numero * i) + "\n" );
-		*/
+		for ( int i=2; i <= tope; i++ )
+			if ( numero % i == 0 )
+				sDivisores += "," + i;
 		
-		int i = 1;
-		while ( i <= 12 )
-			txaRpta.append( "" + numero + " x " + ( i < 10 ? "  " : "" ) + i + " = " + ( numero * i < 10 ? "  " : "" )  + ( numero * i++) + "\n" );
+		txtDivisores.setText( sDivisores + "," + numero );
 	}
 
 }

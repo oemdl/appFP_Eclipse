@@ -36,7 +36,7 @@ public class frm09 extends JFrame {
 		setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lblCodigo = new JLabel("CÃ³digo : ");
+		JLabel lblCodigo = new JLabel("Código : ");
 		lblCodigo.setBounds(30, 30, 80, 25);
 		getContentPane().add(lblCodigo);
 
@@ -112,7 +112,7 @@ public class frm09 extends JFrame {
 	}
 	
 	private void btnCalcular_actionPerformed() {
-		int codigo = Integer.parseInt( txtCodigo		.getText() );
+		int codigo = Integer.parseInt( txtCodigo.getText() );
 		int unidades = Integer.parseInt( txtUnidades.getText() );
 
 		int precio = codigo == 101 ? 17 : codigo == 102 ? 25 : codigo == 103 ? 16 : 27;
@@ -130,6 +130,7 @@ public class frm09 extends JFrame {
 		txtCompra.setText( df.format(compra) );
 		txtDescuento.setText( df.format(descuento) );
 		txtTotal.setText( df.format(compra - descuento) );
+		
 	}
 
 }

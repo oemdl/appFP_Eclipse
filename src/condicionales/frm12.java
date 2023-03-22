@@ -74,31 +74,30 @@ public class frm12 extends JFrame {
 		String sDia = "";
 		if ( numero == 1 ) sDia = "Lunes";
 		else if ( numero == 2 ) sDia = "Martes";
-		else if ( numero == 3 ) sDia = "MiÃ©rcoles";
+		else if ( numero == 3 ) sDia = "Miércoles";
 		else if ( numero == 4 ) sDia = "Jueves";
 		else if ( numero == 5 ) sDia = "Viernes";
-		else if ( numero == 6 ) sDia = "SÃ¡bado";
+		else if ( numero == 6 ) sDia = "Sábado";
 		else if ( numero == 7 ) sDia = "Domingo";
 		else sDia = "Error";
 		txtDia.setText(sDia);
 		*/
 
 		/*
-		String[] sDias = {"Lunes","Martes","MiÃ©rcoles","Jueves","Viernes","SÃ¡bado","Domingo"};
+		String[] sDias = {"Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"};
 		if ( numero >= 1 && numero <= 7)
 			txtDia.setText( sDias[ numero - 1 ] );
 		else txtDia.setText( "Error" );
-
 		*/
-
+		
 		String sDia = "";
 		switch ( numero ) {
 			case 1 : sDia = "Lunes"; break;
 			case 2 : sDia = "Martes"; break;
-			case 3 : sDia = "MiÃ©rcoles"; break;
+			case 3 : sDia = "Miércoles"; break;
 			case 4 : sDia = "Jueves"; break;
 			case 5 : sDia = "Viernes"; break;
-			case 6 : sDia = "SÃ¡bado"; break;
+			case 6 : sDia = "Sábado"; break;
 			case 7 : sDia = "Domingo"; break;
 			default : sDia = "Error";
 		}
