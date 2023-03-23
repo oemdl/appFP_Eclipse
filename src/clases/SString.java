@@ -1,9 +1,9 @@
 package clases;
 
-public class clsString {
+public class SString {
 	char[] aTexto;
 	
-	public clsString(char[] cs) {
+	public SString(char[] cs) {
 		this.aTexto = cs;
 	}
 	
