@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm05 extends JFrame {
+public class _05 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtNumero;
@@ -23,7 +23,7 @@ public class frm05 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm05 frame = new frm05();
+					_05 frame = new _05();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class frm05 extends JFrame {
 		});
 	}
 
-	public frm05() {
+	public _05() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 400);
 		setLocationRelativeTo( null );

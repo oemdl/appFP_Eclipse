@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm01 extends JFrame {
+public class _01 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtDividendo, txtDivisor, txtCociente, txtResiduo;
@@ -20,7 +20,7 @@ public class frm01 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm01 frame = new frm01();
+					_01 frame = new _01();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,58 +29,58 @@ public class frm01 extends JFrame {
 		});
 	}
 
-	public frm01() {
+	public _01() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 250, 250);
-		setLayout(null);
+		setBounds(0, 0, 250, 300);
+		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		
 		JLabel lblDividendo = new JLabel("Dividendo :");
-		lblDividendo.setBounds(30,30,80,25);
+		lblDividendo.setBounds(40, 40, 80, 30);
 		getContentPane().add(lblDividendo);
 		
 		JLabel lblDivisor = new JLabel("Divisor :");
-		lblDivisor.setBounds(30,60,80,25);
+		lblDivisor.setBounds(40, 80, 80, 30);
 		getContentPane().add(lblDivisor);
 		
 		JLabel lblCociente = new JLabel("Cociente :");
-		lblCociente.setBounds(30,90,80,25);
+		lblCociente.setBounds(40, 120, 80, 30);
 		getContentPane().add(lblCociente);
 		
 		JLabel lblResiduo = new JLabel("Residuo :");
-		lblResiduo.setBounds(30,120,80,25);
+		lblResiduo.setBounds(40, 160, 80, 30);
 		getContentPane().add(lblResiduo);
 		
-		Insets insets = new Insets(2,5,2,5);
+		Insets insets = new Insets(2, 5, 2, 5);
 		
 		txtDividendo = new JTextField();
-		txtDividendo.setBounds(120,30,60,25);
+		txtDividendo.setBounds( 120, 40, 60, 30);
 		txtDividendo.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtDividendo.setMargin(insets);
 		getContentPane().add(txtDividendo);
 		
 		txtDivisor = new JTextField();
-		txtDivisor.setBounds(120,60,60,25);
+		txtDivisor.setBounds(120, 80, 60, 30);
 		txtDivisor.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtDivisor.setMargin(insets);
 		getContentPane().add(txtDivisor);
 		
 		txtCociente = new JTextField();
-		txtCociente.setBounds(120,90,60,25);
+		txtCociente.setBounds(120, 120, 60, 30);
 		txtCociente.setFocusable(false);
 		txtCociente.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtCociente.setMargin(insets);
 		getContentPane().add(txtCociente);
 
 		txtResiduo = new JTextField();
-		txtResiduo.setBounds(120,120,60,25);
+		txtResiduo.setBounds(120, 160, 60, 30);
 		txtResiduo.setFocusable(false);
 		txtResiduo.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtResiduo.setMargin(insets);
 		getContentPane().add(txtResiduo);
 		
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(70,160,100,30);
+		btnCalcular.setBounds(70, 200, 100, 30);
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 		
@@ -103,25 +103,23 @@ public class frm01 extends JFrame {
 		
 		/*
 		int cociente = 0;
-		for( ; dividendo >= divisor; ) {
+		for( ; dividendo >= divisor ; ) {
 			dividendo -= divisor;
 			cociente++;
 		}
 		*/
 		
 		//int cociente = 0;
-		//for( ; dividendo >= divisor; dividendo -= divisor, cociente++ );
+		//for( ; dividendo >= divisor ; dividendo -= divisor, cociente++ );
 		
 		
 		//int cociente = 1;
-		//for ( ; (dividendo = (dividendo - divisor)) >= divisor; cociente++ );
+		//while ( (dividendo -= divisor) >= divisor ) cociente++;
 		
 		int cociente = 1;
-		while ( (dividendo = (dividendo - divisor)) >= divisor ) cociente++;
-		
+		for ( ; (dividendo -= divisor) >= divisor ; cociente++ );
 		
 		txtCociente.setText( "" + cociente);
 		txtResiduo.setText( "" + dividendo);
 	}
-
 }

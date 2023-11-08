@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm03 extends JFrame {
+public class _03 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtKilometros, txtPies, txtMillas, txtMetros, txtYardas;
@@ -21,7 +21,7 @@ public class frm03 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm03 frame = new frm03();
+					_03 frame = new _03();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class frm03 extends JFrame {
 		});
 	}
 
-	public frm03() {
+	public _03() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 300);
 		setLayout(null);
@@ -76,16 +76,16 @@ public class frm03 extends JFrame {
 		
 		txtMetros = new JTextField();
 		txtMetros.setBounds(110, 120, 70, 25);
+		txtMetros.setFocusable(false);
 		txtMetros.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtMetros.setMargin(new Insets(2, 5, 2, 5));
-		txtMetros.setFocusable(false);
 		getContentPane().add(txtMetros);
 		
 		txtYardas = new JTextField();
 		txtYardas.setBounds(110, 150, 70, 25);
+		txtYardas.setFocusable(false);
 		txtYardas.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtYardas.setMargin(new Insets(2, 5, 2, 5));
-		txtYardas.setFocusable(false);
 		getContentPane().add(txtYardas);
 
 		JButton btnCalcular = new JButton("Calcular");
@@ -93,7 +93,9 @@ public class frm03 extends JFrame {
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 		
-		btnCalcular.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) { btnCalcular_actionPerformed(); } });
+		btnCalcular.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) { 
+				btnCalcular_actionPerformed(); } });
 	}
 
 	private void btnCalcular_actionPerformed() {

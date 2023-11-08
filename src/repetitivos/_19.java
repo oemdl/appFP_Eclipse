@@ -8,14 +8,14 @@ import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class frm19 extends JFrame {
+public class _19 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm19 frame = new frm19();
+					_19 frame = new _19();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -24,7 +24,7 @@ public class frm19 extends JFrame {
 		});
 	}
 
-	public frm19() {
+	public _19() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 00, 200, 230);
 		setLayout(null);

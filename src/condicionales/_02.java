@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 
-public class frm02 extends JFrame {
+public class _02 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtUnidades;
@@ -25,7 +25,7 @@ public class frm02 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm02 frame = new frm02();
+					_02 frame = new _02();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class frm02 extends JFrame {
 		});
 	}
 
-	public frm02() {
+	public _02() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 320);
 		setLayout(null);

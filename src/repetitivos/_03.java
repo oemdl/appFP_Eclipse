@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm03 extends JFrame {
+public class _03 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtNumero, txtDivisores;
@@ -20,7 +20,7 @@ public class frm03 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm03 frame = new frm03();
+					_03 frame = new _03();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class frm03 extends JFrame {
 		});
 	}
 
-	public frm03() {
+	public _03() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 180);
 		setLocationRelativeTo( null );
@@ -67,8 +67,6 @@ public class frm03 extends JFrame {
 
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
-		//int tope = numero % 2 == 0 ? numero / 2 : numero / 3; 
-		//int tope = numero / ( numero % 2 == 0 ? 2 : 3);
 					
 		int tope = numero / ( numero % 2 + 2 );
 		String sDivisores = "1";

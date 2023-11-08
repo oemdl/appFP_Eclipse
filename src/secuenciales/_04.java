@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm04 extends JFrame {
+public class _04 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,7 +22,7 @@ public class frm04 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm04 frame = new frm04();
+					_04 frame = new _04();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class frm04 extends JFrame {
 		});
 	}
 
-	public frm04() {
+	public _04() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 200, 220);
 		setLayout(null);
@@ -63,9 +63,9 @@ public class frm04 extends JFrame {
 		
 		txtMetros = new JTextField();
 		txtMetros.setBounds(100,90,60,25);
+		txtMetros.setFocusable(false);
 		txtMetros.setMargin(new Insets(2,5,2,5));
 		txtMetros.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtMetros.setFocusable(false);
 		getContentPane().add(txtMetros);
 		
 		JButton btnCalcular = new JButton("Calcular");
@@ -74,7 +74,8 @@ public class frm04 extends JFrame {
 		getContentPane().add(btnCalcular);
 		
 		btnCalcular.addActionListener( new ActionListener() {
-			public void actionPerformed(ActionEvent e) { btnCalcular_actionPerformed(); } });
+			public void actionPerformed(ActionEvent e) { 
+				btnCalcular_actionPerformed(); } });
 	}
 
 	protected void btnCalcular_actionPerformed() {

@@ -11,16 +11,16 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class frm02 extends JFrame {
+public class _02 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	JTextField txtN1, txtN2, txtProducto;
+	JTextField txtMultiplicando, txtMultiplicador, txtProducto;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm02 frame = new frm02();
+					_02 frame = new _02();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class frm02 extends JFrame {
 		});
 	}
 
-	public frm02() {
+	public _02() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 200, 250);
 		setLocationRelativeTo( null );
@@ -47,17 +47,17 @@ public class frm02 extends JFrame {
 		lblProducto.setBounds(30, 90, 80, 25);
 		getContentPane().add(lblProducto);
 		
-		txtN1 = new JTextField();
-		txtN1.setBounds(100, 30, 50, 25);
-		txtN1.setMargin( new Insets( 2, 5, 2, 5 ));
-		txtN1.setHorizontalAlignment(SwingConstants.RIGHT);
-		getContentPane().add(txtN1);
+		txtMultiplicando = new JTextField();
+		txtMultiplicando.setBounds(100, 30, 50, 25);
+		txtMultiplicando.setMargin( new Insets( 2, 5, 2, 5 ));
+		txtMultiplicando.setHorizontalAlignment(SwingConstants.RIGHT);
+		getContentPane().add(txtMultiplicando);
 		
-		txtN2 = new JTextField();
-		txtN2.setBounds(100, 60, 50, 25);
-		txtN2.setMargin( new Insets( 2, 5, 2, 5 ));
-		txtN2.setHorizontalAlignment(SwingConstants.RIGHT);
-		getContentPane().add(txtN2);
+		txtMultiplicador = new JTextField();
+		txtMultiplicador.setBounds(100, 60, 50, 25);
+		txtMultiplicador.setMargin( new Insets( 2, 5, 2, 5 ));
+		txtMultiplicador.setHorizontalAlignment(SwingConstants.RIGHT);
+		getContentPane().add(txtMultiplicador);
 		
 		txtProducto = new JTextField();
 		txtProducto.setBounds(100, 90, 50, 25);
@@ -77,17 +77,17 @@ public class frm02 extends JFrame {
 	}
 
 	private void btnCalcular_actionPerformed() {
-		int N1 = Integer.parseInt( txtN1.getText() );
-		int N2 = Integer.parseInt( txtN2.getText() );
+		int Multiplicando = Integer.parseInt( txtMultiplicando.getText() );
+		int Multiplicador = Integer.parseInt( txtMultiplicador.getText() );
 		
-		for ( int Nx = N1, veces = 1; veces++ < N2; N1 += Nx );
+		//for ( int Nx = Multiplicando, veces = 1; veces++ < Multiplicador; Multiplicando += Nx );
 		
-		//for( int Nx = N1; N2-- > 1; N1 += Nx );
+		for( int Nx = Multiplicando; Multiplicador-- > 1; Multiplicando += Nx );
 		
-		//int Nx = N1;
-		//while ( N2-- > 1 ) N1 += Nx;
+		//int Nx = Multiplicando;
+		//while ( Multiplicador-- > 1 ) Multiplicando += Nx;
 		
-		txtProducto.setText( "" + N1 );		
+		txtProducto.setText( "" + Multiplicando );
 	}
 
 }

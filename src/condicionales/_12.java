@@ -9,10 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
-public class frm12 extends JFrame {
+public class _12 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtNumero, txtDia;
@@ -21,7 +20,7 @@ public class frm12 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm12 frame = new frm12();
+					_12 frame = new _12();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,66 +29,66 @@ public class frm12 extends JFrame {
 		});
 	}
 
-	public frm12() {
+	public _12() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 200, 200);
+		setBounds(0, 0, 220, 220);
 		setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lblNumero = new JLabel("NÃºmero : ");
-		lblNumero.setBounds(30, 30, 60, 25);
+		JLabel lblNumero = new JLabel("Número : ");
+		lblNumero.setBounds(40, 40, 60, 30);
 		getContentPane().add(lblNumero);
 		
-		JLabel lblDia = new JLabel("DÃ­a : ");
-		lblDia.setBounds(30, 60, 60, 25);
+		JLabel lblDia = new JLabel("Día : ");
+		lblDia.setBounds(40, 80, 60, 30);
 		getContentPane().add(lblDia);
 		
-		Insets insets = new Insets(2, 5, 2, 5);
-		
 		txtNumero = new JTextField();
-		txtNumero.setBounds(100, 30, 60, 25);
+		txtNumero.setBounds(100, 40, 60, 25);
 		txtNumero.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtNumero.setMargin( insets );
+		txtNumero.setMargin( new Insets(5, 8, 5, 8) );
 		getContentPane().add(txtNumero);
 		
 		txtDia = new JTextField();
-		txtDia.setBounds(100, 60, 60, 25);
-		txtDia.setMargin( insets );
+		txtDia.setBounds(100, 80, 60, 30);
 		txtDia.setFocusable(false);
+		txtDia.setMargin( new Insets(5, 8, 5, 8) );
 		getContentPane().add(txtDia);
 		
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(50, 100, 100, 30);
+		btnCalcular.setBounds(70, 140, 100, 30);
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 		
 		btnCalcular.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { btnCalcular_actionPerformed(); } });
+			public void actionPerformed(ActionEvent e) { 
+				btnCalcular_actionPerformed(); } });
 	}
 	
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
 
 		/*
-		String sDia = "";
-		if ( numero == 1 ) sDia = "Lunes";
-		else if ( numero == 2 ) sDia = "Martes";
-		else if ( numero == 3 ) sDia = "Miércoles";
-		else if ( numero == 4 ) sDia = "Jueves";
-		else if ( numero == 5 ) sDia = "Viernes";
-		else if ( numero == 6 ) sDia = "Sábado";
-		else if ( numero == 7 ) sDia = "Domingo";
-		else sDia = "Error";
-		txtDia.setText(sDia);
-		*/
-
-		/*
-		String[] sDias = {"Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"};
-		if ( numero >= 1 && numero <= 7)
-			txtDia.setText( sDias[ numero - 1 ] );
+		if ( numero == 1 ) txtDia.setText("Lunes");
+		else if ( numero == 2 ) txtDia.setText("Martes");
+		else if ( numero == 3 ) txtDia.setText("Miércoles");
+		else if ( numero == 4 ) txtDia.setText("Jueves");
+		else if ( numero == 5 ) txtDia.setText("Viernes");
+		else if ( numero == 6 ) txtDia.setText("Sábado");
+		else if ( numero == 7 ) txtDia.setText("Domingo");
+		else txtDia.setText("Error");		
+		
+		String[] aDias = {"Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"};
+		if ( numero >= 1 && numero <= 7 ) 
+			txtDia.setText( aDias[ numero - 1 ] );
 		else txtDia.setText( "Error" );
+		
 		*/
 		
+		String[] aDias = {"Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"};
+		txtDia.setText( numero >= 1 && numero <= 7 ? aDias[ numero - 1 ]  : "Error" );
+		
+		/*
 		String sDia = "";
 		switch ( numero ) {
 			case 1 : sDia = "Lunes"; break;
@@ -102,6 +101,7 @@ public class frm12 extends JFrame {
 			default : sDia = "Error";
 		}
 		txtDia.setText( sDia );
+		*/
 	}
 
 }

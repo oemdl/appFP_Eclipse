@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class frm11 extends JFrame {
+public class _11 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtNumero, txtRpta;
@@ -20,7 +20,7 @@ public class frm11 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm11 frame = new frm11();
+					_11 frame = new _11();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class frm11 extends JFrame {
 		});
 	}
 
-	public frm11() {
+	public _11() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 200, 200);
 		setLayout(null);

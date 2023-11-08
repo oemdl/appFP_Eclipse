@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
-public class frm01 extends JFrame {
+public class _01 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	JTextField txtUnidades, txtPrecio, txtCompra, txtDescuento, txtTotal;
@@ -21,7 +21,7 @@ public class frm01 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frm01 frame = new frm01();
+					_01 frame = new _01();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class frm01 extends JFrame {
 		});
 	}
 
-	public frm01() {
+	public _01() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 300);
 		getContentPane().setLayout(null);
