@@ -36,11 +36,11 @@ public class _23 extends JFrame {
 		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lblMatematica = new JLabel("Matemática :");
+		JLabel lblMatematica = new JLabel("MatemÃ¡tica :");
 		lblMatematica.setBounds(40, 40, 80, 30);
 		getContentPane().add(lblMatematica);
 		
-		JLabel lblFisica = new JLabel("Física :");
+		JLabel lblFisica = new JLabel("FÃ­sica :");
 		lblFisica.setBounds(40, 80, 80, 30);
 		getContentPane().add(lblFisica);
 		
@@ -98,7 +98,7 @@ public class _23 extends JFrame {
 			txtMatematica.setText("");
 			txtFisica.setText("");
 			txtMatematica.requestFocus();
-			JOptionPane.showMessageDialog(this, "Notas inválidas");
+			JOptionPane.showMessageDialog(this, "Notas invï¿½lidas");
 		}
 			
 		double propina = matematica + fisica * 0.50;
