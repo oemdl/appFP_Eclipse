@@ -35,7 +35,7 @@ public class _03 extends JFrame {
 		setLocationRelativeTo( null );
 		setLayout(null);
 		
-		JLabel lblNumero = new JLabel("Número :");
+		JLabel lblNumero = new JLabel("NÃºmero :");
 		lblNumero.setBounds(30, 30, 60, 25);
 		getContentPane().add(lblNumero);
 		
@@ -50,11 +50,11 @@ public class _03 extends JFrame {
 		getContentPane().add(txtNumero);
 		
 		txtDivisores = new JTextField();
-		txtDivisores.setBounds(100, 60, 100, 25);
+		txtDivisores.setBounds(100, 60, 120, 25);
 		txtDivisores.setFocusable(false);
 		txtDivisores.setMargin( new Insets( 2, 5, 2, 5 ));
 		getContentPane().add(txtDivisores);
-		
+
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.setBounds(60, 100, 100, 30);
 		btnCalcular.setMnemonic('a');
@@ -67,15 +67,23 @@ public class _03 extends JFrame {
 
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
-					
+
 		int tope = numero / ( numero % 2 + 2 );
 		String sDivisores = "1";
-		
+
 		for ( int i=2; i <= tope; i++ )
 			if ( numero % i == 0 )
 				sDivisores += "," + i;
-		
+
 		txtDivisores.setText( sDivisores + "," + numero );
+
+		txtDivisores.setText( strDivisores(numero, 1, "") );
+	}
+
+	protected String strDivisores(int numero, int contador, String rpta ) {
+		if ( numero == contador ) return rpta += numero;
+		if ( numero % contador == 0 ) rpta += contador + ",";
+		return strDivisores(numero, contador + 1, rpta);
 	}
 
 }

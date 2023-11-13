@@ -36,11 +36,11 @@ public class _23 extends JFrame {
 		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lblMatematica = new JLabel("Matem√°tica :");
+		JLabel lblMatematica = new JLabel("Matem·tica :");
 		lblMatematica.setBounds(40, 40, 80, 30);
 		getContentPane().add(lblMatematica);
 		
-		JLabel lblFisica = new JLabel("F√≠sica :");
+		JLabel lblFisica = new JLabel("FÌsica :");
 		lblFisica.setBounds(40, 80, 80, 30);
 		getContentPane().add(lblFisica);
 		

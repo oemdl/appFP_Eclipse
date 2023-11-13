@@ -38,45 +38,45 @@ public class _06 extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(null);
 		
-		JLabel lblNumero = new JLabel("Número :");
-		lblNumero.setBounds(30, 30, 60, 25);
+		JLabel lblNumero = new JLabel("NÃºmero :");
+		lblNumero.setBounds(40, 40, 60, 30);
 		getContentPane().add(lblNumero);
 		
 		JLabel lblInicio = new JLabel("Inicio :");
-		lblInicio.setBounds(30, 60, 60, 25);
+		lblInicio.setBounds(40, 80, 60, 30);
 		getContentPane().add(lblInicio);
 		
 		JLabel lblFin = new JLabel("Fin :");
-		lblFin.setBounds(30, 90, 60, 25);
+		lblFin.setBounds(40, 120, 60, 30);
 		getContentPane().add(lblFin);
 		
 		txtNumero = new JTextField();
-		txtNumero.setBounds(100, 30, 50, 25);
-		txtNumero.setMargin( new Insets( 2, 5, 2, 5 ));
+		txtNumero.setBounds(100, 40, 50, 30);
+		txtNumero.setMargin( new Insets( 5, 10, 5, 10 ));
 		txtNumero.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtNumero);
 
 		txtInicio = new JTextField();
-		txtInicio.setBounds(100, 60, 50, 30);
-		txtInicio.setMargin( new Insets( 2, 5, 2, 5 ));
+		txtInicio.setBounds(100, 80, 50, 30);
+		txtInicio.setMargin( new Insets( 5, 10, 5, 10 ));
 		txtInicio.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtInicio);
 
 		txtFin = new JTextField();
-		txtFin.setBounds(100, 90, 50, 25);
-		txtFin.setMargin( new Insets( 2, 5, 2, 5 ));
+		txtFin.setBounds(100, 120, 50, 30);
+		txtFin.setMargin( new Insets( 5, 10, 5, 10 ));
 		txtFin.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtFin);
 
 		txaRpta = new JTextArea();
 		txaRpta.setMargin( new Insets(5,10,5,5));
 		
-		JScrollPane scPane = new JScrollPane(txaRpta);
-		scPane.setBounds(30, 130, 150, 250);
-		getContentPane().add(scPane);
+		JScrollPane sp = new JScrollPane(txaRpta);
+		sp.setBounds(30, 160, 150, 250);
+		getContentPane().add(sp);
 		
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(50, 420, 100, 30);
+		btnCalcular.setBounds(50, 430, 100, 30);
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 
@@ -90,8 +90,8 @@ public class _06 extends JFrame {
 		int inicio = Integer.parseInt( txtInicio.getText() );
 		int fin = Integer.parseInt( txtFin.getText() );
 		txaRpta.setText("");
-		
-		for( int i=inicio; i <= fin; i++ ) 
+
+		for( int i=inicio; i <= fin; i++ )
 			txaRpta.append( "" + numero + " x " + i + " = " + ( numero * i) + "\n" );
 
 	}

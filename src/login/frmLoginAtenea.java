@@ -26,7 +26,7 @@ public class frmLoginAtenea extends JFrame {
 
 	JTextField txtUsuario;
 	JPasswordField txtPassword;
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,13 +46,13 @@ public class frmLoginAtenea extends JFrame {
 		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		setUndecorated(true);
-		
+
 		JPanel pnlLogin = new JPanel();
 		pnlLogin.setBounds(0, 0, 400, 50);
 		pnlLogin.setBackground( new Color( 94,17,97 ) );
 		pnlLogin.setLayout(null);
 		getContentPane().add(pnlLogin);
-		
+
 		JLabel imgLogo = new JLabel();
 		imgLogo.setBounds(96, 3, 208, 43);
 		imgLogo.setIcon(new ImageIcon(frmLoginAtenea.class.getResource("/login/logo.png")));
@@ -66,37 +66,37 @@ public class frmLoginAtenea extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuario :");
 		lblUsuario.setBounds(100, 100, 80, 30);
 		getContentPane().add(lblUsuario);
-		
+
 		JLabel lblPassword = new JLabel("Password :");
 		lblPassword.setBounds(100, 150, 80, 30);
 		getContentPane().add(lblPassword);
-		
+
 		txtUsuario = new JTextField();
 		txtUsuario.setBounds(180, 100, 100, 30);
 		txtUsuario.setColumns(8);
 		getContentPane().add(txtUsuario);
-		
+
 		txtPassword = new JPasswordField();
 		txtPassword.setBounds(180, 150, 100, 30);
 		txtPassword.setColumns(6);
 		txtPassword.setEchoChar('*');
 		getContentPane().add(txtPassword);
-		
+
 		JButton btnIniciar = new JButton("Iniciar");
 		btnIniciar.setBackground( new Color(94, 17, 97) );
 		btnIniciar.setBorderPainted(false);
 		btnIniciar.setBounds(75, 230, 100, 30);
 		btnIniciar.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-		btnIniciar.setFocusPainted(false);		
+		btnIniciar.setFocusPainted(false);
 		btnIniciar.setForeground( Color.white );
 		getContentPane().add(btnIniciar);
-		
+
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBackground( new Color(94, 17, 97) );
 		btnCancelar.setBorderPainted(false);
 		btnCancelar.setBounds(230, 230, 100, 30);
 		btnCancelar.setCursor( new Cursor(Cursor.HAND_CURSOR) );
-		btnCancelar.setFocusPainted(false);		
+		btnCancelar.setFocusPainted(false);
 		btnCancelar.setForeground( Color.white );
 		getContentPane().add(btnCancelar);
 
@@ -135,7 +135,7 @@ public class frmLoginAtenea extends JFrame {
 	}
 
 	protected void imgSalir_mouseClicked() {
-		if ( JOptionPane.showConfirmDialog(this, "¿Desea salir?","Salir del sistema", 
+		if ( JOptionPane.showConfirmDialog(this, "ï¿½Desea salir?","Salir del sistema", 
 			 JOptionPane.YES_NO_OPTION ) == JOptionPane.YES_OPTION ) 
 			System.exit(0);
 	}
@@ -170,17 +170,17 @@ public class frmLoginAtenea extends JFrame {
 			e.consume();
 	}
 
-	
+
 	protected void btnIniciar_actionPerformed() {
 		if ( txtUsuario.getText().length() == txtUsuario.getColumns() &&
-			 String.valueOf( txtPassword.getPassword() ).length() == txtPassword.getColumns() ) {
-			
+			String.valueOf( txtPassword.getPassword() ).length() == txtPassword.getColumns() ) {
+
 			// validar usuario y/o password
-		} else  { 
+		} else  {
 			JOptionPane.showMessageDialog(this, "Completar campos");
 			btnCancelar_actionPerformed();
 		}
-		
+
 	}
 
 	protected void btnCancelar_actionPerformed() {

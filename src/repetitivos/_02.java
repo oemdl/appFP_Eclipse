@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class _02 extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
+
 	JTextField txtMultiplicando, txtMultiplicador, txtProducto;
 
 	public static void main(String[] args) {
@@ -34,38 +34,38 @@ public class _02 extends JFrame {
 		setBounds(0, 0, 200, 250);
 		setLocationRelativeTo( null );
 		setLayout(null);
-		
+
 		JLabel lblN1 = new JLabel("N1 :");
 		lblN1.setBounds(30, 30, 60, 25);
 		getContentPane().add(lblN1);
-		
+
 		JLabel lblN2 = new JLabel("N2 :");
 		lblN2.setBounds(30, 60, 60, 25);
 		getContentPane().add(lblN2);
-		
+
 		JLabel lblProducto = new JLabel("Producto :");
 		lblProducto.setBounds(30, 90, 80, 25);
 		getContentPane().add(lblProducto);
-		
+
 		txtMultiplicando = new JTextField();
 		txtMultiplicando.setBounds(100, 30, 50, 25);
 		txtMultiplicando.setMargin( new Insets( 2, 5, 2, 5 ));
 		txtMultiplicando.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtMultiplicando);
-		
+
 		txtMultiplicador = new JTextField();
 		txtMultiplicador.setBounds(100, 60, 50, 25);
 		txtMultiplicador.setMargin( new Insets( 2, 5, 2, 5 ));
 		txtMultiplicador.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtMultiplicador);
-		
+
 		txtProducto = new JTextField();
 		txtProducto.setBounds(100, 90, 50, 25);
 		txtProducto.setMargin( new Insets( 2, 5, 2, 5 ));
 		txtProducto.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtProducto.setFocusable(false);
 		getContentPane().add(txtProducto);
-		
+
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.setBounds(40, 130, 100, 30);
 		btnCalcular.setMnemonic('a');
@@ -77,17 +77,23 @@ public class _02 extends JFrame {
 	}
 
 	private void btnCalcular_actionPerformed() {
-		int Multiplicando = Integer.parseInt( txtMultiplicando.getText() );
-		int Multiplicador = Integer.parseInt( txtMultiplicador.getText() );
-		
-		//for ( int Nx = Multiplicando, veces = 1; veces++ < Multiplicador; Multiplicando += Nx );
-		
-		for( int Nx = Multiplicando; Multiplicador-- > 1; Multiplicando += Nx );
-		
-		//int Nx = Multiplicando;
-		//while ( Multiplicador-- > 1 ) Multiplicando += Nx;
-		
-		txtProducto.setText( "" + Multiplicando );
+		int multiplicando = Integer.parseInt( txtMultiplicando.getText() );
+		int multiplicador = Integer.parseInt( txtMultiplicador.getText() );
+
+		//int Nx = multiplicando;
+		//while ( multiplicador-- > 1 ) multiplicando += Nx;
+
+		//for ( int Nx = multiplicando, veces = 1; veces++ < multiplicador; multiplicando += Nx );
+
+		for( int Nx = multiplicando; multiplicador-- > 1; multiplicando += Nx );
+
+		txtProducto.setText( "" + multiplicando );
+		//txtProducto.setText( "" + Multiplicar(multiplicando, multiplicador) );
+	}
+
+	public int Multiplicar(int multiplicando, int multiplicador) {
+		if ( multiplicador == 1) return multiplicando;
+		return multiplicando + Multiplicar(multiplicando, multiplicador - 1);
 	}
 
 }

@@ -34,29 +34,29 @@ public class _05 extends JFrame {
 
 	public _05() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 250, 400);
+		setBounds(0, 0, 250, 420);
 		setLocationRelativeTo( null );
 		setLayout(null);
-		
-		JLabel lblNumero = new JLabel("Número :");
-		lblNumero.setBounds(30, 30, 60, 25);
+
+		JLabel lblNumero = new JLabel("NÃºmero :");
+		lblNumero.setBounds(40, 40, 60, 30);
 		getContentPane().add(lblNumero);
-		
+
 		txtNumero = new JTextField();
-		txtNumero.setBounds(100, 30, 50, 25);
+		txtNumero.setBounds(100, 40, 50, 30);
 		txtNumero.setMargin( new Insets( 2, 5, 2, 5 ));
 		txtNumero.setHorizontalAlignment(SwingConstants.RIGHT);
 		getContentPane().add(txtNumero);
 
 		txaRpta = new JTextArea();
 		txaRpta.setMargin( new Insets(5,10,5,5));
-		
+
 		JScrollPane scPane = new JScrollPane(txaRpta);
-		scPane.setBounds(30, 60, 150, 240);
+		scPane.setBounds(40, 80, 150, 240);
 		getContentPane().add(scPane);
-		
+
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(60, 320, 100, 30);
+		btnCalcular.setBounds(60, 330, 100, 30);
 		btnCalcular.setMnemonic('a');
 		getContentPane().add(btnCalcular);
 
@@ -68,12 +68,12 @@ public class _05 extends JFrame {
 	private void btnCalcular_actionPerformed() {
 		int numero = Integer.parseInt( txtNumero.getText() );
 		txaRpta.setText("");
-		
+
 		/*
-		for( int i = 1; i <= 12; i++ ) 
+		for( int i = 1; i <= 12; i++ )
 			txaRpta.append( "" + numero + " x " + ( i < 10 ? "  " : "" ) + i + " = " + ( numero * i < 10 ? "  " : "" )  + ( numero * i) + "\n" );
 		*/
-		
+
 		int i = 1;
 		while ( i <= 12 )
 			txaRpta.append( "" + numero + " x " + ( i < 10 ? "  " : "" ) + i + " = " + ( numero * i < 10 ? "  " : "" )  + ( numero * i++) + "\n" );
